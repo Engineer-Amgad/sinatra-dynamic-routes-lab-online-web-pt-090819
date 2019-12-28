@@ -12,9 +12,8 @@ class App < Sinatra::Base
     "#{@sqr}"
   end 
   
-  get "/hello/:name" do
-    @user_name = params[:name]
-    "Hello #{@user_name}!"
+  get '/say/:number/:phrase' do
+    params[:number].times()
   end
 end
 
