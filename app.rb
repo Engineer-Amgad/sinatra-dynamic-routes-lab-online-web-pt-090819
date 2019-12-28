@@ -6,6 +6,12 @@ class App < Sinatra::Base
     @user_name = params[:name].reverse
     "#{@user_name}"
   end
+  
+  get '/square/:number' do 
+    @sqr = Math.sqrt(params[:number].to_i)
+    "#{@sqr}"
+  end 
+  
 end
 
 
@@ -21,8 +27,5 @@ end
     "goodbye #{@user_name}!"
   end 
   
-  get '/square/:number' do 
-    @sqr = Math.sqrt(params[:number].to_i)
-    "#{@sqr}"
-  end 
+  
 end
