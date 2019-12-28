@@ -12,6 +12,10 @@ class App < Sinatra::Base
     "#{@sqr}"
   end 
   
+  get "/hello/:name" do
+    @user_name = params[:name]
+    "Hello #{@user_name}!"
+  end
 end
 
 
