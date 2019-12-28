@@ -22,5 +22,9 @@ class App < Sinatra::Base
     @str.flatten
   end
   
+  get '/reversename/:name' do
+    @user_name = params[:name].reverse
+    "#{@user_name}"
+  end
   
 end
