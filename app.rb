@@ -27,9 +27,23 @@ class App < Sinatra::Base
     "#{@user_name}"
   end
   
-  get '/reversename/:name' do
-    @user_name = params[:name].reverse
-    "#{@user_name}"
+  get '/:operation/:number1/:number2' do
+    @operation = params[:operation]
+    @num1 = params[:number1].to_i
+    @num2 = params[:number2].to_i
+    if @operation == "add"
+      @sum = @num1 + @num2
+      "#{sum}"
+    elsif @operation == "subtract"
+      @subtraction = @num1 - @num2
+      "#{subtraction}"
+    elsif @operation == "multibly"
+      @multiblication = @num1 * @num2
+      "#{multiblication}"
+    else 
+      @divition = @num1 / @num2
+      "#{divition}"
+    end 
   end
   
 end
